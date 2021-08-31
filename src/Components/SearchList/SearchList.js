@@ -1,47 +1,55 @@
 import React, { useState } from "react";
-import "./SearchList.css";
+import { SearchListBox, DropDown } from "./style";
+// Component for choosing a region from a dropdown menu.
 
 const SearchList = ({ setFilterData, countries }) => {
     const [isActive, setIsActive] = useState(false);
+    const [currentRegion, setCurrentRegion] = useState("All Countries");
 
-    const regions = ["All", "Africa", "America", "Asia", "Europe", "Oceania"];
+    const regions = [
+        "All Countries",
+        "Africa",
+        "America",
+        "Asia",
+        "Europe",
+        "Oceania",
+    ];
 
     const filterRegion = (e) => {
         const id = e.target.id;
-        if (id === "All") {
+        if (id === "All Countries") {
             setFilterData(countries);
+            setCurrentRegion("All Countries");
         } else {
             setFilterData(countries.filter((item) => item.region.includes(id)));
+            setCurrentRegion(id);
         }
     };
 
     const setActive = () => {
+        console.log("hello");
         setIsActive((prevState) => !prevState);
     };
 
     return (
-        <div>
-            <div className={"search-list"} onClick={() => setActive()}>
-                Filter by Region
-            </div>
+        <SearchListBox onClick={() => setActive()}>
+            {currentRegion}
             {isActive ? (
-                <div className="dropdown">
-                    {regions.map((item) => {
-                        return (
-                            <p
-                                id={item}
-                                onClick={(e) => {
-                                    setIsActive(false);
-                                    filterRegion(e);
-                                }}
-                            >
-                                {item}
-                            </p>
-                        );
-                    })}
-                </div>
+                <DropDown>
+                    {regions.map((item) => (
+                        <p
+                            id={item}
+                            onClick={(e) => {
+                                setIsActive(false);
+                                filterRegion(e);
+                            }}
+                        >
+                            {item}
+                        </p>
+                    ))}
+                </DropDown>
             ) : null}
-        </div>
+        </SearchListBox>
     );
 };
 

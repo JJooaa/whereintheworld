@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./Country.css";
 import commaNumber from "comma-number";
+import { Link } from "react-router-dom";
 
 const Country = ({
     currentCountry,
@@ -25,17 +26,20 @@ const Country = ({
             <div
                 style={{ width: 1250, marginLeft: "auto", marginRight: "auto" }}
             >
-                <button
-                    className="back-button"
-                    onClick={() => setCurrentCountry([])}
-                >
-                    Back
-                </button>
+                <Link to="/">
+                    <button
+                        className="back-button"
+                        onClick={() => setCurrentCountry([])}
+                    >
+                        Back
+                    </button>
+                </Link>
             </div>
             <div className="country-container">
                 <div className="image-container">
                     <img src={currentCountry.flag} />
                 </div>
+
                 <div className="country-content-container">
                     <h2>{currentCountry.name}</h2>
                     <div className="country-content">
@@ -74,7 +78,7 @@ const Country = ({
                             <p>
                                 <span>Languages: </span>
                                 {currentCountry.languages.map(
-                                    (language) => language.name + " "
+                                    (language) => language.name + ", "
                                 )}
                             </p>
                         </div>

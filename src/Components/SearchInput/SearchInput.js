@@ -1,9 +1,9 @@
 import React from "react";
-import "./SearchInput.css";
+import { Input } from "./style";
 
 const SearchInput = ({ setInput }) => {
     return (
-        <input
+        <Input
             placeholder="Search for a country..."
             className="search-input"
             type="text"

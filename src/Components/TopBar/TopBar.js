@@ -1,41 +1,24 @@
 import React from "react";
-import "./TopBar.css";
+import { TopBarContainer } from "../../Styles/containerStyles";
+import { TopBarWrapper, NightMode, Header, Image } from "./style";
+import nightModeBlack from "../../images/night-mode-black.svg";
+import nightModeWhite from "../../images/night-mode-white.svg";
 
-const TopBar = () => {
+const TopBar = ({ toggleTheme, theme }) => {
     return (
-        <div
-            className="topbar"
-            style={{ maxWidth: "100%", background: "white", height: 100 }}
-        >
-            <div
-                style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    paddingLeft: 60,
-                    paddingRight: 60,
-                    maxWidth: 1430,
-                    marginLeft: "auto",
-                    marginRight: "auto",
-                    height: "100%",
-                }}
-            >
-                <h1>Where in the world?</h1>
-                <div
-                    style={{
-                        display: "flex",
-                        width: 110,
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                    }}
-                >
-                    <img
-                        style={{ width: 20, height: 20, background: "black" }}
+        <TopBarContainer>
+            <TopBarWrapper>
+                <Header>Where in the world?</Header>
+                <NightMode onClick={() => toggleTheme()}>
+                    <Image
+                        src={
+                            theme === "light" ? nightModeBlack : nightModeWhite
+                        }
                     />
-                    <p>Dark Mode</p>
-                </div>
-            </div>
-        </div>
+                    Dark Mode
+                </NightMode>
+            </TopBarWrapper>
+        </TopBarContainer>
     );
 };
 
