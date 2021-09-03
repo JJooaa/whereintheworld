@@ -8,6 +8,7 @@ export const darkTheme = {
     elementBg: "hsl(209, 23%, 22%)",
     cardShadow: "0px 0px 5px hsla(0,0%,0%, 0.2)",
     searchImg: searchWhite,
+    hoverShadow: "0px 0px 5px hsl(0,0%,0%, 0.6)",
 };
 
 export const lightTheme = {
@@ -17,4 +18,5 @@ export const lightTheme = {
     elementBg: "white",
     cardShadow: "0px 0px 5px hsla(0, 0%, 52%, 0.24)",
     searchImg: searchBlack,
+    hoverShadow: "0px 0px 5px hsla(0, 0%, 27%, 0.5)",
 };

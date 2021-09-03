@@ -17,6 +17,7 @@ export const Input = styled.input`
     font-weight: 600;
     margin-right: 20px;
     background-color: ${(props) => props.theme.elementBg};
+    cursor: pointer;
 
     &::placeholder {
         color: ${(props) => props.theme.text};
@@ -25,6 +26,6 @@ export const Input = styled.input`
     }
 
     &:hover {
-        box-shadow: 0px 0px 5px hsla(0, 0%, 27%, 0.5);
+        box-shadow: ${(props) => props.theme.hoverShadow};
     }
 `;

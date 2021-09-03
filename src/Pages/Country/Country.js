@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./Country.css";
 import commaNumber from "comma-number";
 import { Link } from "react-router-dom";
+import { Button } from "./style";
 
 const Country = ({
     currentCountry,
@@ -21,18 +22,25 @@ const Country = ({
         });
     };
 
+    const fullName = (code) => {
+        let name = "";
+        countries.filter((item) => {
+            if (item.alpha3Code.toLowerCase() === code.toLowerCase()) {
+                name += item.name;
+            }
+        });
+        return name;
+    };
+
     return (
         <>
             <div
-                style={{ width: 1250, marginLeft: "auto", marginRight: "auto" }}
+                style={{ maxWidth: 1250, marginLeft: "auto", marginRight: "auto" }}
             >
                 <Link to="/">
-                    <button
-                        className="back-button"
-                        onClick={() => setCurrentCountry([])}
-                    >
+                    <Button primary onClick={() => setCurrentCountry([])}>
                         Back
-                    </button>
+                    </Button>
                 </Link>
             </div>
             <div className="country-container">
@@ -43,7 +51,7 @@ const Country = ({
                 <div className="country-content-container">
                     <h2>{currentCountry.name}</h2>
                     <div className="country-content">
-                        <div>
+                        <div style={{width: 300}}>
                             <p>
                                 <span>Native Name: </span>
                                 {currentCountry.nativeName}
@@ -64,7 +72,7 @@ const Country = ({
                                 {currentCountry.capital}
                             </p>
                         </div>
-                        <div>
+                        <div style={{width: 300}}>
                             <p>
                                 <span>Top Level Domain: </span>
                                 {currentCountry.topLevelDomain}
@@ -83,19 +91,20 @@ const Country = ({
                             </p>
                         </div>
                     </div>
-                    <p style={{ fontWeight: 800, paddingTop: 30 }}>
+                    <p style={{ fontWeight: 800, width: 200, paddingTop: 30, }}>
                         Border Countries:
                     </p>
                     <div className="border-countries">
                         {currentCountry.borders.length > 0 ? (
                             currentCountry.borders.map((code) => {
                                 return (
-                                    <button
-                                        onClick={() => borderCountry(code)}
-                                        className="border-countries-button"
-                                    >
-                                        {code}
-                                    </button>
+                                    <Link to={`/${fullName(code)}`}>
+                                        <Button
+                                            onClick={() => borderCountry(code)}
+                                        >
+                                            {fullName(code)}
+                                        </Button>
+                                    </Link>
                                 );
                             })
                         ) : (

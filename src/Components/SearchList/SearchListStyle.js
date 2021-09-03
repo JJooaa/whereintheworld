@@ -21,7 +21,7 @@ export const SearchListBox = styled.div`
     background-size: 16px;
 
     &:hover {
-        box-shadow: ${(props) => props.theme.cardShadow};
+        box-shadow: ${(props) => props.theme.hoverShadow};
     }
 `;
 
@@ -29,7 +29,7 @@ export const DropDown = styled.div`
     position: absolute;
     background-color: ${(props) => props.theme.elementBg};
     width: 200px;
-    height: 190px;
+    height: 186px;
     display: flex;
     flex-direction: column;
     border-radius: 5px;
@@ -40,18 +40,19 @@ export const DropDown = styled.div`
     top: 100%;
     right: 0;
     left: 0;
+`;
 
-    & p {
-        font-weight: 600;
-        font-size: 14px;
-        padding-left: 20px;
-        padding-top: 6px;
-        padding-bottom: 6px;
-        cursor: pointer;
-        text-decoration: none;
+export const ListItem = styled.p`
+    font-weight: 600;
+    font-size: 14px;
+    padding-left: 20px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
 
-        &:hover {
-            box-shadow: ${(props) => props.theme.cardShadow};
-        }
+    &:hover {
+        box-shadow: ${(props) => props.theme.hoverShadow};
     }
 `;

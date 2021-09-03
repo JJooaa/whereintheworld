@@ -1,6 +1,6 @@
 import React from "react";
 import { TopBarContainer } from "../../Styles/containerStyles";
-import { TopBarWrapper, NightMode, Header, Image } from "./style";
+import { TopBarWrapper, NightMode, Header, Image } from "./TopBarStyle";
 import nightModeBlack from "../../images/night-mode-black.svg";
 import nightModeWhite from "../../images/night-mode-white.svg";
 
@@ -15,7 +15,7 @@ const TopBar = ({ toggleTheme, theme }) => {
                             theme === "light" ? nightModeBlack : nightModeWhite
                         }
                     />
-                    Dark Mode
+                    {theme === "light" ? "Dark Mode" : "Light Mode"}
                 </NightMode>
             </TopBarWrapper>
         </TopBarContainer>

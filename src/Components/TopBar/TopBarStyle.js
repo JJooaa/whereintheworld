@@ -27,6 +27,7 @@ export const NightMode = styled.div`
     justify-content: space-between;
     font-weight: 600;
     cursor: pointer;
+    user-select: none;
 `;
 
 export const Image = styled.img`

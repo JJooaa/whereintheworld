@@ -2,7 +2,7 @@ import React from "react";
 import commaNumber from "comma-number";
 import LazyLoad from "react-lazy-load";
 import { Link } from "react-router-dom";
-import { Card, CardImage, CardContent } from "./style";
+import { Card, CardImage, CardContent } from "./CountryCardStyle";
 
 const CountryCard = ({ setCurrentCountry, item }) => {
     return (

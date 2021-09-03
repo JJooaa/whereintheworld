@@ -1,5 +1,5 @@
 import React from "react";
-import { Input } from "./style";
+import { Input } from "./SearchInputStyle";
 
 const SearchInput = ({ setInput }) => {
     return (

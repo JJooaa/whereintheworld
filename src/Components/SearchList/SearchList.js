@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SearchListBox, DropDown } from "./style";
+import { SearchListBox, DropDown, ListItem } from "./SearchListStyle";
 // Component for choosing a region from a dropdown menu.
 
 const SearchList = ({ setFilterData, countries }) => {
@@ -27,29 +27,28 @@ const SearchList = ({ setFilterData, countries }) => {
     };
 
     const setActive = () => {
-        console.log("hello");
         setIsActive((prevState) => !prevState);
     };
 
     return (
-        <SearchListBox onClick={() => setActive()}>
-            {currentRegion}
-            {isActive ? (
-                <DropDown>
-                    {regions.map((item) => (
-                        <p
-                            id={item}
-                            onClick={(e) => {
-                                setIsActive(false);
-                                filterRegion(e);
-                            }}
-                        >
-                            {item}
-                        </p>
-                    ))}
-                </DropDown>
-            ) : null}
-        </SearchListBox>
+        <>
+            <SearchListBox onClick={() => setActive()}>
+                {currentRegion}
+                {isActive && (
+                    <DropDown>
+                        {regions.map((item) => (
+                            <ListItem
+                                key={item}
+                                id={item}
+                                onClick={(e) => filterRegion(e)}
+                            >
+                                {item}
+                            </ListItem>
+                        ))}
+                    </DropDown>
+                )}
+            </SearchListBox>
+        </>
     );
 };
 
