@@ -7,6 +7,10 @@ export const TopBarContainer = styled.div`
     background: ${(props) => props.theme.elementBg};
     height: 100px;
     box-shadow: ${(props) => props.theme.cardShadow};
+
+    @media only screen and (max-width: 570px) {
+        height: 150px;
+    }
 `;
 
 export const InputContainer = styled.div`
@@ -17,6 +21,14 @@ export const InputContainer = styled.div`
     height: 150px;
     align-items: center;
     margin: 0 auto;
+
+    @media only screen and (max-width: 630px) {
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 0px 10px 0px 10px;
+        align-items: flex-start;
+        height: 200px;
+    }
 `;
 
 export const CountriesContainer = styled.div`

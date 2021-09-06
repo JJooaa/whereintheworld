@@ -18,6 +18,7 @@ export const Input = styled.input`
     margin-right: 20px;
     background-color: ${(props) => props.theme.elementBg};
     cursor: pointer;
+    box-sizing: border-box;
 
     &::placeholder {
         color: ${(props) => props.theme.text};
@@ -27,5 +28,9 @@ export const Input = styled.input`
 
     &:hover {
         box-shadow: ${(props) => props.theme.hoverShadow};
+    }
+
+    @media only screen and (max-width: 630px) {
+        width: 100%;
     }
 `;

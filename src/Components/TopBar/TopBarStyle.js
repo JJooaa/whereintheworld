@@ -15,10 +15,23 @@ export const TopBarWrapper = styled.div`
     margin: 0 auto;
     height: 100%;
     flex-wrap: wrap;
+
+    @media only screen and (max-width: 570px) {
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 `;
 
 export const Header = styled.h1`
     color: ${(props) => props.theme.text};
+
+    @media only screen and (max-width: 350px) {
+        font-size: 1.7rem;
+    }
+
 `;
 
 export const NightMode = styled.div`

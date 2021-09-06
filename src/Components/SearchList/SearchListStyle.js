@@ -15,7 +15,7 @@ export const SearchListBox = styled.div`
     cursor: pointer;
     font-size: 14px;
     transition: box-shadow 0.1s ease-out;
-    background-image: url("../../images/chevron-down-sharp.svg");
+    background-image: url(${props => props.theme.hamburger});
     background-repeat: no-repeat;
     background-position: 160px 23px;
     background-size: 16px;

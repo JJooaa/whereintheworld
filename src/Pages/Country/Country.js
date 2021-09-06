@@ -35,7 +35,7 @@ const Country = ({
     return (
         <>
             <div
-                style={{ maxWidth: 1250, marginLeft: "auto", marginRight: "auto" }}
+                style={{ maxWidth: "1390px", marginLeft: "auto", marginRight: "auto" }}
             >
                 <Link to="/">
                     <Button primary onClick={() => setCurrentCountry([])}>
@@ -91,7 +91,7 @@ const Country = ({
                             </p>
                         </div>
                     </div>
-                    <p style={{ fontWeight: 800, width: 200, paddingTop: 30, }}>
+                    <p style={{ fontWeight: 800, paddingTop: 30 }}>
                         Border Countries:
                     </p>
                     <div className="border-countries">

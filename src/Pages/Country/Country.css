@@ -25,6 +25,8 @@
     height: 100%;
     padding-top: 50px;
     padding-left: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .country-content-container h2 {
@@ -93,6 +95,7 @@
         padding-top: 25px;
         padding-left: 0;
         width: 100%;
+        align-items: center;
     }
     .country-content-container h2 {
         text-align: center;
@@ -100,5 +103,31 @@
     .image-container {
         width: 450px;
         height: 300px;
+    }
+    .country-content {
+        padding-left: 100px;
+    }
+    .border-countries {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .country-content-container {
+        display: block;
+    }
+    .country-content {
+        padding-left: 0;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .country-content-container h2 {
+        text-align: left;
+    }
+    .border-countries {
+        display: block;
+        width: 100%;
     }
 }
