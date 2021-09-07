@@ -5,7 +5,6 @@ import {
     BrowserRouter as Router,
     Route,
     Switch,
-    Redirect,
 } from "react-router-dom";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import GlobalStyle from "./Styles/globalStyles";

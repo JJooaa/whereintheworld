@@ -19,6 +19,7 @@ export const Input = styled.input`
     background-color: ${(props) => props.theme.elementBg};
     cursor: pointer;
     box-sizing: border-box;
+    transition: background-color 1s;
 
     &::placeholder {
         color: ${(props) => props.theme.text};

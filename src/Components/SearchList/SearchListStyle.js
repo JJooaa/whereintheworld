@@ -19,6 +19,7 @@ export const SearchListBox = styled.div`
     background-repeat: no-repeat;
     background-position: 160px 23px;
     background-size: 16px;
+    transition: background-color 1s;
 
     &:hover {
         box-shadow: ${(props) => props.theme.hoverShadow};

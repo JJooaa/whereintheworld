@@ -4,8 +4,9 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
     body {
         margin: 0;
-        background: ${(props) => props.theme.background};
+        background-color: ${(props) => props.theme.background};
         color: black;
+        transition: background-color 1s;
     }
 
     div {

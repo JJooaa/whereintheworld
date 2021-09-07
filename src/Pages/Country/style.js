@@ -18,6 +18,7 @@ export const Button = styled.button`
     background-repeat: no-repeat;
     background-position: 20px 10px;
     padding-left: ${(props) => props.primary && "30px"};
+    transition: background-color 1s;
 
     &:hover {
         box-shadow: ${(props) => props.theme.hoverShadow};

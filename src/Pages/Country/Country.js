@@ -12,19 +12,20 @@ const Country = ({
 }) => {
     useEffect(() => {
         setInput("");
-    }, []);
+    }, [setInput]);
 
     const borderCountry = (code) => {
-        countries.filter((item) => {
+        countries.filter(item => {
             if (item.alpha3Code.toLowerCase() === code.toLowerCase()) {
                 setCurrentCountry(item);
             }
         });
+        return;
     };
 
     const fullName = (code) => {
         let name = "";
-        countries.filter((item) => {
+        countries.filter(item => {
             if (item.alpha3Code.toLowerCase() === code.toLowerCase()) {
                 name += item.name;
             }
@@ -45,7 +46,7 @@ const Country = ({
             </div>
             <div className="country-container">
                 <div className="image-container">
-                    <img src={currentCountry.flag} />
+                    <img src={currentCountry.flag} alt={currentCountry.name}/>
                 </div>
 
                 <div className="country-content-container">
@@ -100,6 +101,7 @@ const Country = ({
                                 return (
                                     <Link to={`/${fullName(code)}`}>
                                         <Button
+                                            key={code}
                                             onClick={() => borderCountry(code)}
                                         >
                                             {fullName(code)}

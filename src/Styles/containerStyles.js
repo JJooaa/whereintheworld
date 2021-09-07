@@ -4,10 +4,10 @@ import styled from "styled-components";
 
 export const TopBarContainer = styled.div`
     max-width: "100%";
-    background: ${(props) => props.theme.elementBg};
+    background-color: ${(props) => props.theme.elementBg};
     height: 100px;
     box-shadow: ${(props) => props.theme.cardShadow};
-
+    transition: background-color 1s;
     @media only screen and (max-width: 570px) {
         height: 150px;
     }
